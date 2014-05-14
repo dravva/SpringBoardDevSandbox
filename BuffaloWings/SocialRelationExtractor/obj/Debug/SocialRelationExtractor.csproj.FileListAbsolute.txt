@@ -1,0 +1,9 @@
+D:\STCBing\BuffaloWings\SocialRelationExtractor\bin\Debug\SocialRelationExtractor.dll
+D:\STCBing\BuffaloWings\SocialRelationExtractor\bin\Debug\SocialRelationExtractor.pdb
+D:\STCBing\BuffaloWings\SocialRelationExtractor\bin\Debug\FacebookDataCrawler.dll
+D:\STCBing\BuffaloWings\SocialRelationExtractor\bin\Debug\Newtonsoft.Json.dll
+D:\STCBing\BuffaloWings\SocialRelationExtractor\bin\Debug\FacebookDataCrawler.pdb
+D:\STCBing\BuffaloWings\SocialRelationExtractor\bin\Debug\Newtonsoft.Json.xml
+D:\STCBing\BuffaloWings\SocialRelationExtractor\obj\Debug\SocialRelationExtractor.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\SocialRelationExtractor\obj\Debug\SocialRelationExtractor.dll
+D:\STCBing\BuffaloWings\SocialRelationExtractor\obj\Debug\SocialRelationExtractor.pdb

@@ -1,0 +1,5 @@
+D:\STCBing\BuffaloWings\common\StopWords\bin\Debug\StopWords.dll
+D:\STCBing\BuffaloWings\common\StopWords\bin\Debug\StopWords.pdb
+D:\STCBing\BuffaloWings\common\StopWords\obj\Debug\StopWords.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\common\StopWords\obj\Debug\StopWords.dll
+D:\STCBing\BuffaloWings\common\StopWords\obj\Debug\StopWords.pdb

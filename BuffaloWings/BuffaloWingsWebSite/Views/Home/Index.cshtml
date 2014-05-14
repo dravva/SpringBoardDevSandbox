@@ -1,0 +1,165 @@
+﻿@using System.Web.UI.WebControls
+@Scripts.Render("~/bundles/jquerycookie")
+@Scripts.Render("~/bundles/login")
+@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/mainpage")
+@Scripts.Render("~/bundles/jquerycookie")
+@Styles.Render("~/Content/mainpage")
+@Scripts.Render("/Scripts/CloseFriends.js")
+@Scripts.Render("/Scripts/UserStatistics.js")
+@Scripts.Render("/Scripts/springboard.js")
+@Scripts.Render("/Scripts/cardData.js")
+@Scripts.Render("~/bundles/main")
+
+<div id="body">
+
+    <div id="LoginButtons">
+        <div id="weiboLogin">
+            <h2>Weibo</h2>
+            @{
+                if (string.IsNullOrWhiteSpace(ViewBag.WeiboToken) || string.IsNullOrWhiteSpace(ViewBag.WeiboId))
+                {
+                <div id="weibologged-out">
+                    <button onclick="logintoweibo()">Log in</button>
+                </div>
+                }
+                else
+                {
+                <div id="weibologged-in">
+                    <span id="weibologin-name">@ViewBag.WeiboId</span>
+                    <br />
+                    <button id="weibolog-out" onclick="logoutfromweibo()">Log out</button>
+                </div>
+                }
+            }
+        </div>
+
+        <div id="facebookLogin">
+            <h2>Facebook</h2>
+            @{
+                if (string.IsNullOrWhiteSpace(ViewBag.FBToken) || string.IsNullOrWhiteSpace(ViewBag.FBId))
+                {
+                <div id="fblogged-out">
+                    <button onclick="logintofacebook()">Log in</button>
+                </div>
+                }
+                else
+                {
+                <div id="fblogged-in">
+                    <span id="fblogin-name">@ViewBag.FBId</span>
+                    <br />
+                    <button id="fblog-out" onclick="logoutfromfacebook()">Log out</button>
+                </div>
+                }
+            }
+        </div>
+
+        <div id="linkedinLogin">
+            <h2>Linkedin</h2>
+            @{
+                if (string.IsNullOrWhiteSpace(ViewBag.LinkinToken) || string.IsNullOrWhiteSpace(ViewBag.LinkinId))
+                {
+                <div id="lilogged-out">
+                    <button onclick="logintolinkedin()">Log in</button>
+                </div>
+                }
+                else
+                {
+                <div id="lilogged-in">
+                    <span id="lilogin-name">@ViewBag.LinkinId</span>
+                    <br />
+                    <button id="lilog-out" onclick="logoutfromlinkedin()">Log out</button>
+                </div>
+                }
+            }
+        </div>
+    </div>
+
+    <hr />
+        
+    <h2> French Fries </h2>
+    <div id="overlay" class="hidden">
+        <div id="closeOverlay">back</div>
+    </div>
+    <div id="pageContent">
+    </div>
+
+    <div id="templates">
+
+        <div class="general card">
+            <div class="vote" style="float:right;margin-top:5px;">
+                <img src="images/voting.png" />
+            </div>
+            <div class="context">
+                text
+            </div>
+            <ul class="actions"></ul>
+        </div>
+
+        <div class="ThirdParty" style="overflow: auto;">
+            <div class="cardThumbnail" style="float:left; margin-right: 20px;"></div>
+            <div class="cardTitle"></div>
+            <div class="cardCaption"></div>
+        </div>
+
+        <div class="identity invisiblecard">
+            <div class="voteup" style="float:right;margin-top:5px;cursor:pointer;cursor:hand">                
+                <img class="voteupimage" src="\Images/voteup.png" onclick="logData('up', this.parentNode.parentNode, this)" />
+            </div>
+            <div class="votedown" style="float:right;margin-top:5px;cursor: pointer;cursor: hand">                
+                <img id="votedownimage" src="\Images/votedown.png" onclick="logData('down', this.parentNode.parentNode, this)" />
+            </div>
+            <div class="context">                
+                <div class="name" style="text-transform: capitalize; margin-top: 20px; font-size: 20px; font-family: 'Segoe WP SemiLight','Helvetica Neue',Arial, sans-serif;"></div>
+                <div class="post" style="font-size: 14px"></div>
+            </div>
+            <ul class="actions"></ul>
+        </div>
+
+        <div class="location card">
+            <div class="map" style="position: relative; width: 100%; height: 125px;"></div>
+            <ul class="actions"></ul>
+        </div>
+    </div>
+    
+    <div> @*class="footer"*@
+        <div class="VotingResults">
+            <a href="http://blizzard.cloudapp.net/votes.html">Look at Voting Results</a>
+        </div>
+    </div>
+
+    <hr />
+    
+    <h2> Buffalo Wings </h2>
+    <h4> Know your interests and persons you care most </h4>
+
+    <div style="float: left;width:100%;">
+        <div id="pagetitle"></div>
+        <div id="closeFriends"></div>
+        <div id="userStatistics"></div>
+
+        @*<a href="/home/feedback">
+            Look at Voting Results
+        </a>*@
+    </div>
+
+    <div id="templates">
+        <div class="avatar">
+        </div>
+
+        <div class="moment">
+            <div class="momentName">
+                Good Morning
+            </div>
+
+            <div class="momentTopics" style="background-color: rgb(65, 99, 149);">
+            </div>
+        </div>
+    </div>
+
+    <a href="/home/feedback">
+        Look at Voting Results 
+    </a>
+    <hr />
+
+</div>

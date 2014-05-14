@@ -1,0 +1,165 @@
+﻿body {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    /*background-position:fixed;
+    background:url(/prototypes/springboard/images/Calm_762_1600.png) repeat-y fixed;
+                */
+    font-family: "Segoe UI light",Helvetica,Arial,sans-serif;
+}
+
+#pageContent {
+}
+
+.general {
+}
+
+.feedbackdiv {
+    float:right;
+    margin-top:5px;
+}
+
+.card {
+    width: 100%;
+    color: #fff;
+    float: left;
+}
+
+.card:nth-child(2n+1) {
+    background-color: rgba(255,255,255,.2);
+}
+
+.momentName {
+    margin: 40px 20px 20px 20px;
+    font-size: 21px;
+    float:left
+}
+
+.displayname {
+    margin-top: 25px;
+    margin-right: 10px;
+    font-size: 21px;
+    float:right
+}
+
+.momentTopics {
+    overflow: auto;
+    clear: both;
+}
+
+.invisiblecard {
+    width: 100%;
+    border: 0px;
+}
+
+.identity {
+    overflow: auto;
+}
+
+.context {
+    font-size: 20px;
+    color: darkgray;
+    padding: 20px;
+    overflow: auto;
+}
+
+.firstline {
+    font-size: 20px;
+    float: left;
+    color: white;
+    padding: 20px;
+    overflow: auto;
+}
+
+ul.actions {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    transition: all ease-in .5s;
+}
+
+.closed {
+    max-height: 80px;
+}
+
+ul.actions li {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:15px;
+    margin: 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+ul.actions li.d0 {
+    background-color: rgb(65,99,143);
+}
+
+ul.actions li.d1 {
+    background-color: rgb(102,129,169);
+}
+
+ul.actions li.launch {
+    padding: 5px;
+    float: left;
+    width: 75px;
+    margin: 0 0 10px 0;
+    height: 35px;
+    cursor: pointer;
+}
+
+.vote {
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+    float: right;
+}
+
+#templates {
+    display: none;
+}
+
+#mapDiv {
+    overflow: auto;
+    margin: 10px 0 0 0;
+}
+
+.avatar img{
+    margin: 10px;
+    width: 64px;
+    height: 64px;
+    float: right;
+    border-radius: 32px;
+    background-size: contain;
+}
+
+
+
+.footer {
+    width: 100%;
+    height: 5px;
+}
+
+#overlay {
+    width: 100%;
+    /*background-color: #fff;*/
+    position: absolute;
+    z-index: 50;
+    height: 480px;
+}
+
+.hidden {
+    display: none;
+}
+
+.thirdPartyLink {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.cardCaption {
+    font-size: 11px;
+}

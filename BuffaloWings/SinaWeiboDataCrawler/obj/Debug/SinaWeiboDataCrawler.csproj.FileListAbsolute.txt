@@ -1,0 +1,4 @@
+D:\STCBing\BuffaloWings\SinaWeiboDataCrawler\bin\Debug\SinaWeiboDataCrawler.dll
+D:\STCBing\BuffaloWings\SinaWeiboDataCrawler\bin\Debug\SinaWeiboDataCrawler.pdb
+D:\STCBing\BuffaloWings\SinaWeiboDataCrawler\obj\Debug\SinaWeiboDataCrawler.dll
+D:\STCBing\BuffaloWings\SinaWeiboDataCrawler\obj\Debug\SinaWeiboDataCrawler.pdb

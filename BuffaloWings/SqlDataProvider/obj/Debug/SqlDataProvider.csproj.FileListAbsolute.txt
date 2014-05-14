@@ -1,0 +1,5 @@
+D:\STCBing\BuffaloWings\SqlDataProvider\bin\Debug\SqlDataProvider.dll
+D:\STCBing\BuffaloWings\SqlDataProvider\bin\Debug\SqlDataProvider.pdb
+D:\STCBing\BuffaloWings\SqlDataProvider\obj\Debug\SqlDataProvider.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\SqlDataProvider\obj\Debug\SqlDataProvider.dll
+D:\STCBing\BuffaloWings\SqlDataProvider\obj\Debug\SqlDataProvider.pdb

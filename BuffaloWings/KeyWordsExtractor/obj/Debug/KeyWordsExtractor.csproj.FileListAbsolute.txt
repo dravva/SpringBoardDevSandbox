@@ -1,0 +1,16 @@
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\KeyWordsExtractor.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\KeyWordsExtractor.pdb
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\Lucene.Net.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\Newtonsoft.Json.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\PanGu.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\PanGu.HighLight.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\PanGu.Lucene.Analyzer.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\StopWords.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\StopWords.pdb
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\Lucene.Net.pdb
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\Lucene.Net.xml
+D:\STCBing\BuffaloWings\KeyWordsExtractor\bin\Debug\Newtonsoft.Json.xml
+D:\STCBing\BuffaloWings\KeyWordsExtractor\obj\Debug\KeyWordsExtractor.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\KeyWordsExtractor\obj\Debug\KeyWordsExtractor.dll
+D:\STCBing\BuffaloWings\KeyWordsExtractor\obj\Debug\KeyWordsExtractor.pdb

@@ -1,0 +1,5 @@
+D:\STCBing\BuffaloWings\LinkedInDataCrawler\bin\Debug\LinkedInDataCrawler.dll
+D:\STCBing\BuffaloWings\LinkedInDataCrawler\bin\Debug\LinkedInDataCrawler.pdb
+D:\STCBing\BuffaloWings\LinkedInDataCrawler\obj\Debug\LinkedInDataCrawler.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\LinkedInDataCrawler\obj\Debug\LinkedInDataCrawler.dll
+D:\STCBing\BuffaloWings\LinkedInDataCrawler\obj\Debug\LinkedInDataCrawler.pdb

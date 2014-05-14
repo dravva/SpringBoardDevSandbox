@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@Scripts.Render("/Scripts/UserStatistics.js")
+
+<script>
+    function showData() {
+        var accessToken = $("#accessToken").val();
+        UserStatisticsJs.ShowStatistics("#userStatistics", accessToken);
+    }
+</script>
+
+
+<h2>
+    Please input your access token:
+</h2>
+
+<div>
+    <input type="text" id="accessToken" value="CAAIzVFzaDTEBAPAubMOBF0XTauYTzUj7BSrYEfkP4doxH4ZAAJtvNEekjxOonBIDDLDG1CWV5RdFHAyqQUsHgp4J1J44gQzrHZCZCiLcSPHavC2Ewlk8E47OkSXp5qgRRVnrM4bOSrSwM9ZC0Bbm94PX8HervFHNBwSIZBBfnfwrUMZAooMMZB8"/>
+    <input type="button" value="show" id="showButton" onclick="showData();"/>
+    <div id="userStatistics"></div>
+</div>

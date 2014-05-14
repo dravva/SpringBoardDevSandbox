@@ -1,0 +1,26 @@
+﻿@model System.Collections.Generic.IList<SqlDataProvider.contract.FeedbackGroupDetail>
+<style type="text/css">
+    .feedbackline {
+        font-weight: lighter
+    }
+</style>
+
+<h2><a href="/home/feedback">Back</a><br/><br/>Feedback Group Detail</h2>
+
+<table border="1">
+    <tr>
+        <th>User</th>
+        <th>Time</th>
+        <th>Feedback</th>
+    </tr>
+    @{
+        foreach (var feedbackGroupDetail in Model)
+        {
+        <tr class="feedbackline">
+            <th>@feedbackGroupDetail.user</th>
+            <th>@feedbackGroupDetail.time</th>
+            <th>@feedbackGroupDetail.feedback</th>
+        </tr>
+        }
+    }
+</table>

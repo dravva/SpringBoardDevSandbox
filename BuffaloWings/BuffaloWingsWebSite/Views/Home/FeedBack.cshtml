@@ -1,0 +1,34 @@
+﻿@model IList<SqlDataProvider.contract.FeedbackGroupResult>
+<style type="text/css">
+    .feedbackline {
+        font-weight: lighter
+    }
+</style>
+
+<h2>Feedback Group Result</h2>
+<script>
+    function showdetail(event) {
+        var category = $(event.target).parent().find('th:nth-child(1)').text();
+        var item = $(event.target).parent().find('th:nth-child(2)').text();
+        window.location.assign('/home/feedbackdetail?category=' + category + '&item=' + item);
+    }
+</script>
+<table border="1">
+    <tr>
+        <th>category</th>
+        <th>item</th>
+        <th>feedback</th>
+        <th>number</th>
+    </tr>
+    @{
+        foreach (var feedbackGroupResult in Model)
+        {
+        <tr class="feedbackline">
+            <th>@feedbackGroupResult.category</th>
+            <th>@feedbackGroupResult.item</th>
+            <th>@feedbackGroupResult.feedback</th>
+            <th onclick="showdetail(event)" style="text-decoration:underline; color: blue; cursor:pointer ">@feedbackGroupResult.number</th>
+        </tr>
+        }
+    }
+</table>

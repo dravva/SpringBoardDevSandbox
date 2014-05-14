@@ -1,0 +1,11 @@
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\bin\Debug\UserStatisticsGenerator.dll
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\bin\Debug\UserStatisticsGenerator.pdb
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\bin\Debug\FacebookDataCrawler.dll
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\bin\Debug\SocialRelationExtractor.dll
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\bin\Debug\Newtonsoft.Json.dll
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\bin\Debug\FacebookDataCrawler.pdb
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\bin\Debug\SocialRelationExtractor.pdb
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\bin\Debug\Newtonsoft.Json.xml
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\obj\Debug\UserStatisticsGenerator.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\obj\Debug\UserStatisticsGenerator.dll
+D:\STCBing\BuffaloWings\MT\UserStatisticsGenerator\obj\Debug\UserStatisticsGenerator.pdb

@@ -1,0 +1,8 @@
+D:\STCBing\BuffaloWings\Common\KeywordClassifier\bin\Debug\Microsoft.Dldw.BuffaloWings.Common.KeywordClassifier.dll.config
+D:\STCBing\BuffaloWings\Common\KeywordClassifier\bin\Debug\Microsoft.Dldw.BuffaloWings.Common.KeywordClassifier.dll
+D:\STCBing\BuffaloWings\Common\KeywordClassifier\bin\Debug\Microsoft.Dldw.BuffaloWings.Common.KeywordClassifier.pdb
+D:\STCBing\BuffaloWings\Common\KeywordClassifier\bin\Debug\Microsoft.Dldw.BuffaloWings.Common.ApplicationCache.dll
+D:\STCBing\BuffaloWings\Common\KeywordClassifier\bin\Debug\Microsoft.Dldw.BuffaloWings.Common.ApplicationCache.pdb
+D:\STCBing\BuffaloWings\Common\KeywordClassifier\obj\Debug\KeywordClassifier.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\Common\KeywordClassifier\obj\Debug\Microsoft.Dldw.BuffaloWings.Common.KeywordClassifier.dll
+D:\STCBing\BuffaloWings\Common\KeywordClassifier\obj\Debug\Microsoft.Dldw.BuffaloWings.Common.KeywordClassifier.pdb

@@ -1,0 +1,7 @@
+D:\STCBing\BuffaloWings\FacebookDataCrawler\bin\Debug\FacebookDataCrawler.dll
+D:\STCBing\BuffaloWings\FacebookDataCrawler\bin\Debug\FacebookDataCrawler.pdb
+D:\STCBing\BuffaloWings\FacebookDataCrawler\bin\Debug\Newtonsoft.Json.dll
+D:\STCBing\BuffaloWings\FacebookDataCrawler\bin\Debug\Newtonsoft.Json.xml
+D:\STCBing\BuffaloWings\FacebookDataCrawler\obj\Debug\FacebookDataCrawler.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\FacebookDataCrawler\obj\Debug\FacebookDataCrawler.dll
+D:\STCBing\BuffaloWings\FacebookDataCrawler\obj\Debug\FacebookDataCrawler.pdb

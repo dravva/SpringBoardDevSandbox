@@ -1,0 +1,5 @@
+D:\STCBing\BuffaloWings\Common\MemCacheWrapper\bin\Debug\Microsoft.Dldw.BuffaloWings.Common.ApplicationCache.dll
+D:\STCBing\BuffaloWings\Common\MemCacheWrapper\bin\Debug\Microsoft.Dldw.BuffaloWings.Common.ApplicationCache.pdb
+D:\STCBing\BuffaloWings\Common\MemCacheWrapper\obj\Debug\MemCacheWrapper.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\Common\MemCacheWrapper\obj\Debug\Microsoft.Dldw.BuffaloWings.Common.ApplicationCache.dll
+D:\STCBing\BuffaloWings\Common\MemCacheWrapper\obj\Debug\Microsoft.Dldw.BuffaloWings.Common.ApplicationCache.pdb

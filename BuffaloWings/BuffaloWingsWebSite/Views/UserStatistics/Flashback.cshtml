@@ -1,0 +1,170 @@
+﻿@using System.Globalization
+@using UserStatisticsGenerator
+@{
+    ViewBag.Title = "UserStatistics";
+    Layout = null;
+}
+
+<style>
+    .flashback {
+
+    }
+
+    .flashback h2{
+        font-size: 21px;
+        font-weight: normal;
+          font-weight: normal;
+         padding-left: 12px;
+    }
+
+    .flashback h2{
+        clear:both;
+    }
+
+    .flashback ul {
+        background-color: rgb(65, 99, 149);
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    .flashback li{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+
+        color: white;
+        font-weight: bold;
+        font-size: 0.9em;
+        height: 210px;
+        width: 100%;
+        clear: both;
+    }
+
+    .flashback .rel_profile {
+        float: left;
+        font-weight: normal;
+    }
+
+    .flashback .rel_profile img {
+        max-width: 600px;
+        max-height: 100px;
+    }
+
+    .flashback .votePanel {
+        float: right;
+        padding-top: 20px;
+    }
+
+    .flashback .rel_caption {
+        font-weight: normal;
+        font-size: 0.85em;
+    }
+
+    .flashback .post {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 0px;
+        max-width: 180px;
+        overflow: hidden;
+      
+    }
+
+    .flashback .counts {
+     
+        background-color:#ffffff;
+        color: #000000;
+          font-size: 0.75em;
+        width: 80px;
+     
+    }
+     .flashback .like {
+
+         padding-left: 5px;
+     
+    }
+</style>
+<div class="flashback">
+    <h2>@ViewData["section"]</h2>
+    <ul>
+        @{
+            var post = ViewData["flashback"] as UserStatisticsFlashback;
+
+           
+            if (post!=null && post.FacebookPhoto != null)
+            {
+                
+                <li>
+           
+                    <div class="rel_profile">
+                 
+                        <div>Uploaded a Photo on</div>
+                        <div> @UserStatisticsUtil.UnixTimeStampToDateTime(post.FacebookPhoto.CreatedTimestamp).ToString("MM/dd/yyyy",CultureInfo.InvariantCulture)</div>
+                        <div class="post">
+                         
+                            <a href="@post.FacebookPhoto.Link"><img src="@post.FacebookPhoto.NormalUrl"/></a>
+                        </div>  
+                        <div class="counts">
+                            @post.FacebookPhoto.PhotoLikesInfo.LikesCount<img class="like"  src="../images/Facebook-Like-Icon.png">
+                                                                         @post.FacebookPhoto.PhotoCommentsInfo.CommentsCount<img class="like"  src="../images/Facebook-Comment-Icon.png">
+                        </div>
+                        
+                        <div> Frineds Tagged:
+                        </div>
+                    </div>
+                   
+         
+              
+                </li>
+            }
+            else if (post != null && post.FacebookPost != null)
+            {
+                if (post.FacebookPost.Type == "photo")
+                {
+                    <li>
+           
+                        <div class="rel_profile">
+                            <div>Shared a Photo on</div>
+                            <div> @post.FacebookPost.CreateTime.ToString("MM/dd/yyyy",CultureInfo.InvariantCulture)</div>
+                      
+                            <div class="post">
+                                <a href="@post.FacebookPost.Link"><img src="@post.FacebookPost.Picture"/></a>
+                            </div>
+                            <div class="counts">
+                                @post.FacebookPost.Likes.Data.Count()<img class="like"  src="../images/Facebook-Like-Icon.png">
+                                                                     @post.FacebookPost.Comments.Data.Count()<img class="like"  src="../images/Facebook-Comment-Icon.png">
+                            </div>                    
+                        </div>
+         
+              
+                    </li>
+                }
+                else
+                {
+                    <li>
+           
+                        <div class="rel_profile">
+                            <div>Updated Status on</div>
+                            <div> @post.FacebookPost.CreateTime.ToString("MM/dd/yyyy",CultureInfo.InvariantCulture)</div>
+                      
+                            <div class="post">
+                                
+                                @if (!string.IsNullOrEmpty(post.FacebookPost.Description))
+                                {
+                                    <div class="rel_caption">@post.FacebookPost.Description</div>
+                                }
+                                else if (!string.IsNullOrEmpty(post.FacebookPost.Story))
+                                {
+                                    <div class="rel_caption">@post.FacebookPost.Story</div>
+                                }
+                            </div>                    
+                        </div>
+         
+              
+                    </li>
+                }
+            }
+        }
+    </ul>
+</div>
+

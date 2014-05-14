@@ -1,0 +1,85 @@
+﻿body {
+    font-family: 'Segoe UI light',helvetica,Arial,sans-serif;
+    font-size: 1.2em;
+}
+
+#LoginButtons {
+    overflow: auto;
+    margin: 20px;
+}
+
+#weiboLogin, #facebookLogin, #linkedinLogin {
+    margin: 0 10px 10px 0;
+    float: left;
+    width: 120px;
+    height: 110px;
+    padding: 10px;
+    font-family: 'Segoe UI light',helvetica,Arial,sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+}
+
+#facebookLogin {
+    background-color: #4b67a1;
+}
+
+#weiboLogin {
+    background-color: #e6162d;
+}
+
+#linkedinLogin {
+    background-color: #1d87bd;
+}
+
+h1 {
+    margin: 20px;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+}
+
+#directions {
+    font-size: 1em;
+    margin: 20px;
+}
+
+#timeline {
+    background-image: url(images/wallpaper.jpg);
+    background-size: cover;
+    height: 60px;
+    margin: 0 20px;
+    padding: 10px;
+}
+
+#springBoard {
+    background-image: url(http://thumbs.dreamstime.com/z/springboard-swimming-pool-21979307.jpg);
+    background-size: cover;
+    background-position-y: -20px;
+    height: 60px;
+    margin: 0 20px;
+    padding: 10px;
+}
+
+.demoLink {
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+    text-decoration: none;
+    margin: 10px;
+    font-family: 'Segoe UI light',helvetica, Arial,sans-serif;
+}
+
+button {
+    background-color: rgba(255,255,255,.75);
+    border: none;
+    padding: 5px;
+}
+
+#resetTopicListBtn {
+    background-color: #999;
+    color: #fff;
+    border: 1px solid #333;
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+}

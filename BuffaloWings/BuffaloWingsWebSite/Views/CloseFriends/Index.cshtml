@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@Scripts.Render("/Scripts/CloseFriends.js")
+
+<script>
+    function showData() {
+        var accessToken = $("#accessToken").val();
+        DldwData.ShowCloseFriends("#closeFriends", accessToken);
+    }
+</script>
+
+
+<h2>
+    Please input your access token:
+</h2>
+
+<div>
+    <input type="text" id="accessToken"/>
+    <input type="button" value="show" id="showButton" onclick="showData();"/>
+    <div id="closeFriends"></div>
+</div>
+
+

@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.microsoft.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.microsoft.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.microsoft.com/">
+      <s:element name="DF_UploadDFDefinition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dfDefinition" type="tns:UploadDFDefinitionArg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UploadDFDefinitionArg">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfDocuments" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfTerms" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DFName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DFDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DFTermList" type="tns:ArrayOfDFTermInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDFTermInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DFTermInfo" nillable="true" type="tns:DFTermInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DFTermInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TermId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TermString" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DFValue" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DF_UploadDFDefinitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DF_UploadDFDefinitionResult" type="tns:UploadDFDefinitionStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UploadDFDefinitionStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DFId" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="GeneralStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsSucceeded" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DF_GetDFDefinition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dfId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fIncludeTermInfo" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DF_GetDFDefinitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DF_GetDFDefinitionResult" type="tns:GetDFDefinitionStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetDFDefinitionStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DFDefinition" type="tns:DFDefinition" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DFDefinition">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UploadDFDefinitionArg">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DFId" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="DF_GetAllDFDefinition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fIncludeTermInfo" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DF_GetAllDFDefinitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DF_GetAllDFDefinitionResult" type="tns:GetAllDFDefinitionStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetAllDFDefinitionStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DFDefinitionList" type="tns:ArrayOfDFDefinition" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDFDefinition">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DFDefinition" nillable="true" type="tns:DFDefinition" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Data_UploadLabeledData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="labeledDataSet" type="tns:LabeledDataSetArg" />
+            <s:element minOccurs="1" maxOccurs="1" name="fReturnDocIdList" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LabeledDataSetArg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DataSetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSetDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Labelers" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LabelTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LanguageTypeId" type="tns:LanguageType" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataSourceId" type="tns:DataSource" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataUsageId" type="tns:DataUsage" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsageSuggestionId" type="tns:UsageSuggestion" />
+          <s:element minOccurs="1" maxOccurs="1" name="LabelingMethodId" type="tns:LabelingMethodId" />
+          <s:element minOccurs="1" maxOccurs="1" name="docSetId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LabeledDataList" type="tns:ArrayOfLabeledDataArg" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LanguageType">
+        <s:restriction base="s:string">
+          <s:enumeration value="LANGUAGE_TYPE_ENGLISH" />
+          <s:enumeration value="LANGUAGE_TYPE_TRADITIONAL_CHINESE" />
+          <s:enumeration value="LANGUAGE_TYPE_GERMAN" />
+          <s:enumeration value="LANGUAGE_TYPE_SIMPLIFIED_CHINESE" />
+          <s:enumeration value="LANGUAGE_TYPE_SPANISH" />
+          <s:enumeration value="LANGUAGE_TYPE_ITALIAN" />
+          <s:enumeration value="LANGUAGE_TYPE_FRENCH" />
+          <s:enumeration value="LANGUAGE_TYPE_DENMARK" />
+          <s:enumeration value="LANGUAGE_TYPE_FINLAND" />
+          <s:enumeration value="LANGUAGE_TYPE_SWEDISH" />
+          <s:enumeration value="LANGUAGE_TYPE_NORWEGIAN" />
+          <s:enumeration value="LANGUAGE_TYPE_NETHERLANDS" />
+          <s:enumeration value="LANGUAGE_TYPE_PORTUGUESE_BRAZILIAN" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DataSource">
+        <s:restriction base="s:string">
+          <s:enumeration value="DATA_SOURCE_ODP" />
+          <s:enumeration value="DATA_SOURCE_HUMAN_LABELED" />
+          <s:enumeration value="DATA_SOURCE_EXPANDED_NEGATIVE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DataUsage">
+        <s:restriction base="s:string">
+          <s:enumeration value="DATA_USAGE_DEV" />
+          <s:enumeration value="DATA_USAGE_TEST" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="UsageSuggestion">
+        <s:restriction base="s:string">
+          <s:enumeration value="USAGE_SUGGESTION_NULL" />
+          <s:enumeration value="USAGE_SUGGESTION_TRAIN" />
+          <s:enumeration value="USAGE_SUGGESTION_TUNE" />
+          <s:enumeration value="USAGE_SUGGESTION_TRAIN_TUNE" />
+          <s:enumeration value="USAGE_SUGGESTION_EVALUATE" />
+          <s:enumeration value="USAGE_SUGGESTION_TEST_EVALUATE" />
+          <s:enumeration value="USAGE_SUGGESTION_TEST_RECALL_EVALUATE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="LabelingMethodId">
+        <s:restriction base="s:string">
+          <s:enumeration value="SingleCategory" />
+          <s:enumeration value="MultiCategory" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfLabeledDataArg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LabeledDataArg" nillable="true" type="tns:LabeledDataArg" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LabeledDataArg">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DocTypeId" type="tns:DocType" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocTitle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasDocContent" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LabeledResultList" type="tns:ArrayOfLabeledResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DocType">
+        <s:restriction base="s:string">
+          <s:enumeration value="DOC_TYPE_SEARCH_QUERY" />
+          <s:enumeration value="DOC_TYPE_WEB_PAGE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfLabeledResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LabeledResult" nillable="true" type="tns:LabeledResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LabeledResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LabeledResultTypeId" type="tns:LabeledResultType" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LabeledResultType">
+        <s:restriction base="s:string">
+          <s:enumeration value="LABELED_RESULT_TYPE_ANTI_TARGET" />
+          <s:enumeration value="LABELED_RESULT_TYPE_TARGET" />
+          <s:enumeration value="LABELED_RESULT_TYPE_UNSURE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Data_UploadLabeledDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data_UploadLabeledDataResult" type="tns:UploadLabeledDataStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UploadLabeledDataStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DataSetId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocIdList" type="tns:ArrayOfInt" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Data_CrawlLabeledDataContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="languageTypeId" type="tns:LanguageType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Data_CrawlLabeledDataContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data_CrawlLabeledDataContentResult" type="tns:CrawlLabeledDataContentStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CrawlLabeledDataContentStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Data_CalculateTermFrequency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="languageTypeId" type="tns:LanguageType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Data_CalculateTermFrequencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data_CalculateTermFrequencyResult" type="tns:CalculateTermFrequencyStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CalculateTermFrequencyStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Data_GetDataByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ussId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Data_GetDataByCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data_GetDataByCategoryResult" type="tns:GetDataByCategoryStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetDataByCategoryStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DocumentList" type="tns:ArrayOfDocumentInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumentInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentInfo" nillable="true" type="tns:DocumentInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocumentInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DocId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataSourceId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsageSuggestionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ussid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPositive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Data_GetDataByDocSetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="docSetId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Data_GetDataByDocSetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data_GetDataByDocSetIdResult" type="tns:GetDataByCategoryStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Data_GetAllLabeledCategory">
+        <s:complexType />
+      </s:element>
+      <s:element name="Data_GetAllLabeledCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data_GetAllLabeledCategoryResult" type="tns:GetAllLabeledCategoryStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetAllLabeledCategoryStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UssidList" type="tns:ArrayOfInt" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Model_CreateModelingTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modelingTask" type="tns:ModelingTaskArg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ModelingTaskArg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AlgorithmId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DFId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModelingMethodId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LanguageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskStatusId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskStartTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskEndTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryList" type="tns:ArrayOfModelingTaskCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfModelingTaskCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ModelingTaskCategory" nillable="true" type="tns:ModelingTaskCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModelingTaskCategory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CRUId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="USSId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Beta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Gamma" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AlgoId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SharedPath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryDocList" type="tns:ArrayOfModelingTaskCategoryDoc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfModelingTaskCategoryDoc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ModelingTaskCategoryDoc" nillable="true" type="tns:ModelingTaskCategoryDoc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModelingTaskCategoryDoc">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DocId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocUsageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPositive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Model_CreateModelingTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model_CreateModelingTaskResult" type="tns:CreateModelingTaskStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateModelingTaskStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="TaskId" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Model_StartModelingTaskInstance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="taskId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Model_StartModelingTaskInstanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model_StartModelingTaskInstanceResult" type="tns:StartModelingTaskStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StartModelingTaskStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="TaskId" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Model_GetAllModelingTask">
+        <s:complexType />
+      </s:element>
+      <s:element name="Model_GetAllModelingTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model_GetAllModelingTaskResult" type="tns:GetAllModelingTaskStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetAllModelingTaskStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ModelingTaskList" type="tns:ArrayOfModelingTask" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfModelingTask">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ModelingTask" nillable="true" type="tns:ModelingTask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModelingTask">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ModelingTaskArg">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="TaskId" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Tax_GetUSSTaxonomy">
+        <s:complexType />
+      </s:element>
+      <s:element name="Tax_GetUSSTaxonomyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tax_GetUSSTaxonomyResult" type="tns:GetUSSTaxonomyStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetUSSTaxonomyStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ussTaxonomy" type="tns:USSTaxonomy" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="USSTaxonomy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RootUSSNode" type="tns:USSNode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="USSNode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ChildNodes" type="tns:ArrayOfUSSNode" />
+          <s:element minOccurs="1" maxOccurs="1" name="USSId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="USSName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUSSNode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="USSNode" nillable="true" type="tns:USSNode" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Tax_GetConceptOverlapUssids">
+        <s:complexType />
+      </s:element>
+      <s:element name="Tax_GetConceptOverlapUssidsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tax_GetConceptOverlapUssidsResult" type="tns:GetConceptOverLapStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetConceptOverLapStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OverlapUssidList" type="tns:ArrayOfConceptOverLap" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfConceptOverLap">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConceptOverLap" nillable="true" type="tns:ConceptOverLap" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConceptOverLap">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Ussid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverlapUssid" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Tax_GetConceptCloseAntiTarget">
+        <s:complexType />
+      </s:element>
+      <s:element name="Tax_GetConceptCloseAntiTargetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tax_GetConceptCloseAntiTargetResult" type="tns:GetConceptCloseAntiTarget" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetConceptCloseAntiTarget">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CloseAntiTargetUSSIdList" type="tns:ArrayOfConceptCloseAntiTarget" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfConceptCloseAntiTarget">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConceptCloseAntiTarget" nillable="true" type="tns:ConceptCloseAntiTarget" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConceptCloseAntiTarget">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="USSId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CloseUSSId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Classify_GetResults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inputStr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="modelId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="langId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="topN" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Classify_GetResultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Classify_GetResultsResult" type="tns:ClassifyStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClassifyStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeneralStatus">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="results" type="tns:ArrayOfCheResult" />
+              <s:element minOccurs="0" maxOccurs="1" name="snippet" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCheResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CheResult" nillable="true" type="tns:CheResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CheResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="score" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="threshold" type="s:float" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Classify_GetResultsWithoutSnippets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inputStr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="modelId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="langId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="topN" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Classify_GetResultsWithoutSnippetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Classify_GetResultsWithoutSnippetsResult" type="tns:ClassifyStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DF_UploadDFDefinitionSoapIn">
+    <wsdl:part name="parameters" element="tns:DF_UploadDFDefinition" />
+  </wsdl:message>
+  <wsdl:message name="DF_UploadDFDefinitionSoapOut">
+    <wsdl:part name="parameters" element="tns:DF_UploadDFDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DF_GetDFDefinitionSoapIn">
+    <wsdl:part name="parameters" element="tns:DF_GetDFDefinition" />
+  </wsdl:message>
+  <wsdl:message name="DF_GetDFDefinitionSoapOut">
+    <wsdl:part name="parameters" element="tns:DF_GetDFDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DF_GetAllDFDefinitionSoapIn">
+    <wsdl:part name="parameters" element="tns:DF_GetAllDFDefinition" />
+  </wsdl:message>
+  <wsdl:message name="DF_GetAllDFDefinitionSoapOut">
+    <wsdl:part name="parameters" element="tns:DF_GetAllDFDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Data_UploadLabeledDataSoapIn">
+    <wsdl:part name="parameters" element="tns:Data_UploadLabeledData" />
+  </wsdl:message>
+  <wsdl:message name="Data_UploadLabeledDataSoapOut">
+    <wsdl:part name="parameters" element="tns:Data_UploadLabeledDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Data_CrawlLabeledDataContentSoapIn">
+    <wsdl:part name="parameters" element="tns:Data_CrawlLabeledDataContent" />
+  </wsdl:message>
+  <wsdl:message name="Data_CrawlLabeledDataContentSoapOut">
+    <wsdl:part name="parameters" element="tns:Data_CrawlLabeledDataContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Data_CalculateTermFrequencySoapIn">
+    <wsdl:part name="parameters" element="tns:Data_CalculateTermFrequency" />
+  </wsdl:message>
+  <wsdl:message name="Data_CalculateTermFrequencySoapOut">
+    <wsdl:part name="parameters" element="tns:Data_CalculateTermFrequencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Data_GetDataByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:Data_GetDataByCategory" />
+  </wsdl:message>
+  <wsdl:message name="Data_GetDataByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:Data_GetDataByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Data_GetDataByDocSetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Data_GetDataByDocSetId" />
+  </wsdl:message>
+  <wsdl:message name="Data_GetDataByDocSetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Data_GetDataByDocSetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Data_GetAllLabeledCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:Data_GetAllLabeledCategory" />
+  </wsdl:message>
+  <wsdl:message name="Data_GetAllLabeledCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:Data_GetAllLabeledCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Model_CreateModelingTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:Model_CreateModelingTask" />
+  </wsdl:message>
+  <wsdl:message name="Model_CreateModelingTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:Model_CreateModelingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="Model_StartModelingTaskInstanceSoapIn">
+    <wsdl:part name="parameters" element="tns:Model_StartModelingTaskInstance" />
+  </wsdl:message>
+  <wsdl:message name="Model_StartModelingTaskInstanceSoapOut">
+    <wsdl:part name="parameters" element="tns:Model_StartModelingTaskInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Model_GetAllModelingTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:Model_GetAllModelingTask" />
+  </wsdl:message>
+  <wsdl:message name="Model_GetAllModelingTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:Model_GetAllModelingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="Tax_GetUSSTaxonomySoapIn">
+    <wsdl:part name="parameters" element="tns:Tax_GetUSSTaxonomy" />
+  </wsdl:message>
+  <wsdl:message name="Tax_GetUSSTaxonomySoapOut">
+    <wsdl:part name="parameters" element="tns:Tax_GetUSSTaxonomyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Tax_GetConceptOverlapUssidsSoapIn">
+    <wsdl:part name="parameters" element="tns:Tax_GetConceptOverlapUssids" />
+  </wsdl:message>
+  <wsdl:message name="Tax_GetConceptOverlapUssidsSoapOut">
+    <wsdl:part name="parameters" element="tns:Tax_GetConceptOverlapUssidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Tax_GetConceptCloseAntiTargetSoapIn">
+    <wsdl:part name="parameters" element="tns:Tax_GetConceptCloseAntiTarget" />
+  </wsdl:message>
+  <wsdl:message name="Tax_GetConceptCloseAntiTargetSoapOut">
+    <wsdl:part name="parameters" element="tns:Tax_GetConceptCloseAntiTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Classify_GetResultsSoapIn">
+    <wsdl:part name="parameters" element="tns:Classify_GetResults" />
+  </wsdl:message>
+  <wsdl:message name="Classify_GetResultsSoapOut">
+    <wsdl:part name="parameters" element="tns:Classify_GetResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Classify_GetResultsWithoutSnippetsSoapIn">
+    <wsdl:part name="parameters" element="tns:Classify_GetResultsWithoutSnippets" />
+  </wsdl:message>
+  <wsdl:message name="Classify_GetResultsWithoutSnippetsSoapOut">
+    <wsdl:part name="parameters" element="tns:Classify_GetResultsWithoutSnippetsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CHEFrontWebServiceSoap">
+    <wsdl:operation name="DF_UploadDFDefinition">
+      <wsdl:input message="tns:DF_UploadDFDefinitionSoapIn" />
+      <wsdl:output message="tns:DF_UploadDFDefinitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DF_GetDFDefinition">
+      <wsdl:input message="tns:DF_GetDFDefinitionSoapIn" />
+      <wsdl:output message="tns:DF_GetDFDefinitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DF_GetAllDFDefinition">
+      <wsdl:input message="tns:DF_GetAllDFDefinitionSoapIn" />
+      <wsdl:output message="tns:DF_GetAllDFDefinitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Data_UploadLabeledData">
+      <wsdl:input message="tns:Data_UploadLabeledDataSoapIn" />
+      <wsdl:output message="tns:Data_UploadLabeledDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Data_CrawlLabeledDataContent">
+      <wsdl:input message="tns:Data_CrawlLabeledDataContentSoapIn" />
+      <wsdl:output message="tns:Data_CrawlLabeledDataContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Data_CalculateTermFrequency">
+      <wsdl:input message="tns:Data_CalculateTermFrequencySoapIn" />
+      <wsdl:output message="tns:Data_CalculateTermFrequencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetDataByCategory">
+      <wsdl:input message="tns:Data_GetDataByCategorySoapIn" />
+      <wsdl:output message="tns:Data_GetDataByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetDataByDocSetId">
+      <wsdl:input message="tns:Data_GetDataByDocSetIdSoapIn" />
+      <wsdl:output message="tns:Data_GetDataByDocSetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetAllLabeledCategory">
+      <wsdl:input message="tns:Data_GetAllLabeledCategorySoapIn" />
+      <wsdl:output message="tns:Data_GetAllLabeledCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Model_CreateModelingTask">
+      <wsdl:input message="tns:Model_CreateModelingTaskSoapIn" />
+      <wsdl:output message="tns:Model_CreateModelingTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Model_StartModelingTaskInstance">
+      <wsdl:input message="tns:Model_StartModelingTaskInstanceSoapIn" />
+      <wsdl:output message="tns:Model_StartModelingTaskInstanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Model_GetAllModelingTask">
+      <wsdl:input message="tns:Model_GetAllModelingTaskSoapIn" />
+      <wsdl:output message="tns:Model_GetAllModelingTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetUSSTaxonomy">
+      <wsdl:input message="tns:Tax_GetUSSTaxonomySoapIn" />
+      <wsdl:output message="tns:Tax_GetUSSTaxonomySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetConceptOverlapUssids">
+      <wsdl:input message="tns:Tax_GetConceptOverlapUssidsSoapIn" />
+      <wsdl:output message="tns:Tax_GetConceptOverlapUssidsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetConceptCloseAntiTarget">
+      <wsdl:input message="tns:Tax_GetConceptCloseAntiTargetSoapIn" />
+      <wsdl:output message="tns:Tax_GetConceptCloseAntiTargetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Classify_GetResults">
+      <wsdl:input message="tns:Classify_GetResultsSoapIn" />
+      <wsdl:output message="tns:Classify_GetResultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Classify_GetResultsWithoutSnippets">
+      <wsdl:input message="tns:Classify_GetResultsWithoutSnippetsSoapIn" />
+      <wsdl:output message="tns:Classify_GetResultsWithoutSnippetsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CHEFrontWebServiceSoap" type="tns:CHEFrontWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DF_UploadDFDefinition">
+      <soap:operation soapAction="http://www.microsoft.com/DF_UploadDFDefinition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DF_GetDFDefinition">
+      <soap:operation soapAction="http://www.microsoft.com/DF_GetDFDefinition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DF_GetAllDFDefinition">
+      <soap:operation soapAction="http://www.microsoft.com/DF_GetAllDFDefinition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_UploadLabeledData">
+      <soap:operation soapAction="http://www.microsoft.com/Data_UploadLabeledData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_CrawlLabeledDataContent">
+      <soap:operation soapAction="http://www.microsoft.com/Data_CrawlLabeledDataContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_CalculateTermFrequency">
+      <soap:operation soapAction="http://www.microsoft.com/Data_CalculateTermFrequency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetDataByCategory">
+      <soap:operation soapAction="http://www.microsoft.com/Data_GetDataByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetDataByDocSetId">
+      <soap:operation soapAction="http://www.microsoft.com/Data_GetDataByDocSetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetAllLabeledCategory">
+      <soap:operation soapAction="http://www.microsoft.com/Data_GetAllLabeledCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Model_CreateModelingTask">
+      <soap:operation soapAction="http://www.microsoft.com/Model_CreateModelingTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Model_StartModelingTaskInstance">
+      <soap:operation soapAction="http://www.microsoft.com/Model_StartModelingTaskInstance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Model_GetAllModelingTask">
+      <soap:operation soapAction="http://www.microsoft.com/Model_GetAllModelingTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetUSSTaxonomy">
+      <soap:operation soapAction="http://www.microsoft.com/Tax_GetUSSTaxonomy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetConceptOverlapUssids">
+      <soap:operation soapAction="http://www.microsoft.com/Tax_GetConceptOverlapUssids" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetConceptCloseAntiTarget">
+      <soap:operation soapAction="http://www.microsoft.com/Tax_GetConceptCloseAntiTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Classify_GetResults">
+      <soap:operation soapAction="http://www.microsoft.com/Classify_GetResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Classify_GetResultsWithoutSnippets">
+      <soap:operation soapAction="http://www.microsoft.com/Classify_GetResultsWithoutSnippets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CHEFrontWebServiceSoap12" type="tns:CHEFrontWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DF_UploadDFDefinition">
+      <soap12:operation soapAction="http://www.microsoft.com/DF_UploadDFDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DF_GetDFDefinition">
+      <soap12:operation soapAction="http://www.microsoft.com/DF_GetDFDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DF_GetAllDFDefinition">
+      <soap12:operation soapAction="http://www.microsoft.com/DF_GetAllDFDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_UploadLabeledData">
+      <soap12:operation soapAction="http://www.microsoft.com/Data_UploadLabeledData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_CrawlLabeledDataContent">
+      <soap12:operation soapAction="http://www.microsoft.com/Data_CrawlLabeledDataContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_CalculateTermFrequency">
+      <soap12:operation soapAction="http://www.microsoft.com/Data_CalculateTermFrequency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetDataByCategory">
+      <soap12:operation soapAction="http://www.microsoft.com/Data_GetDataByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetDataByDocSetId">
+      <soap12:operation soapAction="http://www.microsoft.com/Data_GetDataByDocSetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Data_GetAllLabeledCategory">
+      <soap12:operation soapAction="http://www.microsoft.com/Data_GetAllLabeledCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Model_CreateModelingTask">
+      <soap12:operation soapAction="http://www.microsoft.com/Model_CreateModelingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Model_StartModelingTaskInstance">
+      <soap12:operation soapAction="http://www.microsoft.com/Model_StartModelingTaskInstance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Model_GetAllModelingTask">
+      <soap12:operation soapAction="http://www.microsoft.com/Model_GetAllModelingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetUSSTaxonomy">
+      <soap12:operation soapAction="http://www.microsoft.com/Tax_GetUSSTaxonomy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetConceptOverlapUssids">
+      <soap12:operation soapAction="http://www.microsoft.com/Tax_GetConceptOverlapUssids" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tax_GetConceptCloseAntiTarget">
+      <soap12:operation soapAction="http://www.microsoft.com/Tax_GetConceptCloseAntiTarget" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Classify_GetResults">
+      <soap12:operation soapAction="http://www.microsoft.com/Classify_GetResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Classify_GetResultsWithoutSnippets">
+      <soap12:operation soapAction="http://www.microsoft.com/Classify_GetResultsWithoutSnippets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CHEFrontWebService">
+    <wsdl:port name="CHEFrontWebServiceSoap" binding="tns:CHEFrontWebServiceSoap">
+      <soap:address location="http://apc-server-118/CheWebService/chewebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CHEFrontWebServiceSoap12" binding="tns:CHEFrontWebServiceSoap12">
+      <soap12:address location="http://apc-server-118/CheWebService/chewebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

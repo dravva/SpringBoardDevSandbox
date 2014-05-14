@@ -1,0 +1,11 @@
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\bin\Debug\Microsoft.Dldw.BuffaloWings.MT.UserInterestAggregator.dll
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\bin\Debug\Microsoft.Dldw.BuffaloWings.MT.UserInterestAggregator.pdb
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\bin\Debug\FacebookDataCrawler.dll
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\bin\Debug\LinkedInDataCrawler.dll
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\bin\Debug\Newtonsoft.Json.dll
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\bin\Debug\FacebookDataCrawler.pdb
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\bin\Debug\LinkedInDataCrawler.pdb
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\bin\Debug\Newtonsoft.Json.xml
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\obj\Debug\UserInterestAggregator.csprojResolveAssemblyReference.cache
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\obj\Debug\Microsoft.Dldw.BuffaloWings.MT.UserInterestAggregator.dll
+D:\STCBing\BuffaloWings\MT\UserInterestAggregator\obj\Debug\Microsoft.Dldw.BuffaloWings.MT.UserInterestAggregator.pdb

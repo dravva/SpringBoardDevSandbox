@@ -1,0 +1,65 @@
+﻿@using System.Web.UI.WebControls
+@Scripts.Render("~/bundles/jquerycookie")
+@Scripts.Render("~/bundles/main")
+@Styles.Render("~/Content/mainpage")
+
+@Scripts.Render("/Scripts/CloseFriends.js")
+@Scripts.Render("/Scripts/UserStatistics.js")
+
+<div style="float: left;width:100%;">
+    <div id="pagetitle"></div>
+    <div id="closeFriends"></div>
+    <div id="userStatistics"></div>
+    
+    <a href="/home/feedback">
+       Look at Voting Results 
+    </a>
+</div>
+
+<div id="templates">
+    <div class="avatar">
+        
+    </div>
+    
+    <div class="moment">
+        <div class="momentName">
+            Good Morning
+        </div>
+        
+        <div class="momentTopics" style="background-color: rgb(65, 99, 149);">
+        </div>
+    </div>
+
+    <div class="general card">
+        <div class="feedbackdiv">
+            <img class="vote" src="../images/icon_down.png" onclick="clickondown(event)">
+            <img class="vote" src="../images/icon_up.png" onclick="clickonup(event)">
+        </div>
+        <div class="context">
+            text
+        </div>
+        <ul class="actions">
+        </ul>
+    </div>
+    <div class="ThirdParty" style="overflow: auto;">
+        <div class="cardThumbnail" style="float: left; margin-right: 20px;"></div>
+        <div class="cardTitle"></div>
+        <div class="cardCaption"></div>
+    </div>
+@*    <div class="identity invisiblecard">
+
+        <div class="context">
+            <div class="avatar"></div>
+            <div class="name" style="text-transform: capitalize; margin-top: 20px; font-size: 20px; font-family: 'Segoe WP SemiLight','Helvetica Neue',Arial, sans-serif;"></div>
+            <div class="post" style="font-size: 14px"></div>
+
+        </div>
+        <ul class="actions">
+        </ul>
+    </div>*@
+    <div class="location card">
+        <div class="map" style="position: relative; width: 100%; height: 125px;" ></div>
+        <ul class="actions">
+        </ul>
+    </div>
+</div>

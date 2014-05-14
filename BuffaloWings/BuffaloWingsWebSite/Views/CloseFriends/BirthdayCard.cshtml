@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+
+    var birthdayCardData = ViewData["birthdayCards"] as IEnumerable<Microsoft.Dldw.BuffaloWings.SocialRelation.BirthdayCard>;
+}
+
+<style>
+    .birth_card {
+        background-color: rgb(65, 99, 149);
+    }
+
+    .birth_card h2{
+        font-size: 21px;
+        font-weight: normal;
+        background-color: #333;
+        width: 100%;
+    }
+
+    .birth_card ul {
+        background-color: rgb(65, 99, 149);
+        padding-top: 10px;
+        padding-left: 10px;
+        margin-top: 0;
+    }
+
+    .birth_card li{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+
+        color: white;
+        font-size: 1em;
+        width: 100%;
+        clear: both;
+    }
+
+    .birth_card .birth_profile {
+        background-color: rgb(65, 99, 149);
+        float: left;
+    }
+
+    .birth_card .birth_title {
+        background-color: rgb(65, 99, 149);
+        clear: both;
+    }
+
+    .birth_card .birth_profile img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .birth_card .birth_caption {
+        font-weight: normal;
+        font-size: 0.85em;
+    }
+
+    .birth_card .birth_name {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 5px;
+        max-width: 180px;
+        overflow: hidden;
+        font-weight: bold;
+    }
+
+    .birth_card .votePanel {
+        float: right;
+        padding-top: 20px;
+    }
+</style>
+
+@foreach (var birthdayCard in birthdayCardData)
+{
+    <div class="birth_card">
+        <h2>@birthdayCard.Person.FullName 's birthday is comming </h2>
+        <div class="birth_profile">
+            <img src="@birthdayCard.Person.Picture"/>
+            <div class="birth_name">
+                <div>@birthdayCard.Person.FullName</div>
+                <div class="birth_caption">It is @birthdayCard.Birthday.ToString("MMMM dd")</div>
+                        
+            </div>
+        </div>
+    
+        @{ var voteId = "BirthdayCard" + "_" + @birthdayCard.Person.FullName;}
+        <div class="votePanel" data="@voteId"><img class="vote" onclick="DldwData.ThumbDown(event)" src="../images/icon_down.png"> <img class="vote" onclick="DldwData.ThumbUp(event)" src="../images/icon_up.png"></div>
+        
+
+        @if (@birthdayCard.Memories.Any())
+        {
+            <div class="birth_title">Here are some sweet memories of you two:</div>
+            <ul class="birth_posts">
+                @foreach (var post in birthdayCard.Memories)
+                {
+                    <li data="@post.Id">
+                        <div class="birth_caption">
+                            <span>@post.Time.ToString("yyyy-MM-dd") </span>
+
+                            <span>@post.Caption</span>
+                    
+                        </div>
+                
+                        <a href="@post.OriginalPage" target="_blank"><img src="@post.Picture"></a>
+                    </li>
+                }
+            </ul>
+        }
+        
+    </div>
+}
+
+
+
